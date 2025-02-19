@@ -23,7 +23,7 @@ public class CsvToDatabase {
         String password = "1234";
 
         // CSV 파일이 저장된 경로
-        File dir = new File("D:/data_busan/export/raw_export");
+        File dir = new File("D:/data_busan/semas_data");
 
         // Connection 객체 선언
         Connection connection = null;
@@ -46,7 +46,7 @@ public class CsvToDatabase {
             for (File file : files) {
                 // LOAD DATA INFILE 쿼리 생성
                 String query = String.format("LOAD DATA INFILE '%s' INTO TABLE " + tableName + " " +
-                                "FIELDS TERMINATED BY '|' ENCLOSED BY '\"' LINES TERMINATED BY '\\r\\n' IGNORE 1 LINES;",
+                                "FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\\r\\n' IGNORE 1 LINES;",
                         file.getAbsolutePath().replace("\\", "/"));  // 경로 구분자는 '/'로 변경
 
                 System.out.print("파일 " + file.getName() + " 데이터 삽입 중...");
