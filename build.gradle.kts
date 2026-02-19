@@ -19,6 +19,11 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2") // JSON 처리
     implementation("org.projectlombok:lombok:1.18.28")
     annotationProcessor("org.projectlombok:lombok:1.18.28")
+    // PDF 처리 (병합/페이지 추가/이미지 그리기 등)
+    implementation("org.apache.pdfbox:pdfbox:3.0.5")
+
+    // [옵션] EXIF 방향(가로/세로) 읽어서 이미지 자동 회전하고 싶을 때
+    implementation("com.drewnoakes:metadata-extractor:2.19.0")
 }
 
 tasks.test {
